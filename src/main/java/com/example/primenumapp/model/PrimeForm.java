@@ -31,6 +31,10 @@ public class PrimeForm {
         return upperBound;
     }
 
+    public void setUpperBound(int upperBound) {
+        this.upperBound = upperBound;
+    }
+
     public List<Integer> getPrimes() {
         return primes;
     }

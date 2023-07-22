@@ -16,7 +16,6 @@
 
 <div id="primeNumbersSection" th:if="${primeForm != null }">
   <p>Prime numbers up to <span th:text="${primeForm.upperBound}"></span>: <span th:text="${primeForm.getPrimes()}"></span></p>
-  <a href="#" th:href="@{/export}">Download Prime Numbers (CSV)</a>
 </div>
 
 
