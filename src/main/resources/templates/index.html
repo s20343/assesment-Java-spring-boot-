@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number Calculator</title>
+</head>
+<body>
+<h1>Prime Number Calculator</h1>
+<form action="#" th:action="@{/calculate}" th:object="${primeForm}" method="post">
+  <label for="upperBound">Enter the upper boundary:</label>
+  <input type="number" id="upperBound" th:field="*{upperBound}">
+  <input type="submit" value="Calculate">
+</form>
+
+<p th:if="${errorMessage}" style="color: red;">${errorMessage}</p>
+
+<div id="primeNumbersSection" th:if="${primeForm != null }">
+  <p>Prime numbers up to <span th:text="${primeForm.upperBound}"></span>: <span th:text="${primeForm.getPrimes()}"></span></p>
+  <a href="#" th:href="@{/export}">Download Prime Numbers (CSV)</a>
+</div>
+
+
+</body>
+</html>
